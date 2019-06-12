@@ -6,15 +6,22 @@ using UnityEngine.UI;
 
 public class TextReader : MonoBehaviour
 {
-    private TextAsset textFile;
+    private TextAsset csvFile;
+    private List<string[]> textDatas = new List<string[]>();
     [SerializeField]
     private Text textAppear;
 
     private void Start()
     {
-        textFile = Resources.Load("不思議の国のアリス(一部)") as TextAsset;
+        csvFile = Resources.Load("csv読み込みテスト") as TextAsset;
+        StringReader reader = new StringReader(csvFile.text);
+        while (reader.Peek() != -1)
+        {
+            string line = reader.ReadLine();
+            textDatas.Add(line.Split(','));
+        }
 
-        textAppear.text = textFile.text;
+        textAppear.text = textDatas[0][0];
     }
 
 }
