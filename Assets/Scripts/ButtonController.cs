@@ -10,11 +10,15 @@ public class ButtonController : BaseButtonController
         // 渡されたオブジェクト名で処理を分岐
         if ("YesButton".Equals(objectName))
         {
-            this.YesButtonClick();
+            this.ButtonClick("Yes");
         } 
         else if ("NoButton".Equals(objectName))
         {
-            this.NoButtonClick();
+            this.ButtonClick("No");
+        }
+        else if ("ScreenButton".Equals(objectName))
+        {
+            this.ButtonClick("Screen");
         }
         else
         {
@@ -22,14 +26,23 @@ public class ButtonController : BaseButtonController
         }
     }
 
-    private void YesButtonClick()
+    private void ButtonClick(string _clickButton)
     {
-        Debug.Log("はい");
-    }
-
-    private void NoButtonClick()
-    {
-        Debug.Log("いいえ");
+        switch (_clickButton)
+        {
+                case "Yes":
+                    Debug.Log("はい");
+                    break;
+                
+                case "No":
+                    Debug.Log("いいえ");
+                    break;
+                
+                case "Screen":
+                    Debug.Log("画面をクリックしました");
+                    UIManager.Instance.HasTouchScreen = true;
+                    break;
+        }
     }
     
 }
