@@ -743,6 +743,7 @@ GameObject:
   - component: {fileID: 1365040480}
   - component: {fileID: 1365040481}
   - component: {fileID: 1365040482}
+  - component: {fileID: 1365040483}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -792,6 +793,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   titleCanvas: {fileID: 0}
   button: {fileID: 0}
+--- !u!114 &1365040483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365040479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b8d568a1336442ead1b814697593c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_pair:
+  - key: Yes
+    btn: {fileID: 1057343509}
+  - key: No
+    btn: {fileID: 1413401772}
 --- !u!1 &1413401770
 GameObject:
   m_ObjectHideFlags: 0

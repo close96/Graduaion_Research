@@ -62,6 +62,7 @@
     <Compile Include="Assets\Scripts\JsonTextReader.cs" />
     <Compile Include="Assets\Scripts\SingletonMonoBehaviour.cs" />
     <Compile Include="Assets\Scripts\TextReader.cs" />
+    <Compile Include="Assets\Scripts\UIButtonList.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <None Include="Assets\Resources\Texts\不思議の国のアリス(一部).txt" />
     <Reference Include="Unity.Timeline.Editor">

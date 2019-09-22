@@ -16,6 +16,7 @@
           <e p="JsonTextReader.cs" t="Include" />
           <e p="SingletonMonoBehaviour.cs" t="Include" />
           <e p="TextReader.cs" t="Include" />
+          <e p="UIButtonList.cs" t="Include" />
           <e p="UIManager.cs" t="Include" />
         </e>
       </e>
