@@ -1,34 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : SingletonMonoBehaviour<UIManager>
 {
-	public bool HasTouchScreen
-	{
-		get { return hasTouchScreen; }
-		set { hasTouchScreen = value; }
-	}
 
-	private bool hasTouchScreen;
-
-	[SerializeField]
-	private GameObject titleCanvas;
+	public UIButtonList btnList;
 	
 	void Start ()
 	{
 		DontDestroyOnLoad(this);
+		btnList.onClick = OnClick;
 	}
-	
-	void Update ()
+
+	private void OnClick(string _key)
 	{
-		// タイトル画面をクリックでゲームシーンに移行
-		if (GameManager.Instance.CurrentGameState == GameManager.GameState.Title && hasTouchScreen)
+		switch (_key)
 		{
-			titleCanvas.SetActive(false);
-			GameManager.Instance.HasChangeState = true;
-			GameManager.Instance.NextGameState = GameManager.GameState.GameScene;
-			hasTouchScreen = false;
+			case "Yes":
+				Debug.Log("はいを押したよ");
+				break;
+			// タイトル画面をクリック。ゲーム画面に移行
+			case "TitleScreen":
+				GameManager.Instance.SceneChange(GameManager.GameState.GameScene);
+				break;
 		}
 	}
 	

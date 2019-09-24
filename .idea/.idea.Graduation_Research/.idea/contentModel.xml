@@ -10,8 +10,6 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="BaseButtonController.cs" t="Include" />
-          <e p="ButtonController.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="JsonTextReader.cs" t="Include" />
           <e p="SingletonMonoBehaviour.cs" t="Include" />

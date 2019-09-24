@@ -16,35 +16,23 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 		get { return currentGameState; }
 		set { currentGameState = value; }
 	}
-	public bool HasChangeState
-	{
-		get { return hasChangeState; }
-		set { hasChangeState = value; }
-	}
-
-	public GameState NextGameState
-	{
-		get { return nextGameState; }
-		set { nextGameState = value; }
-	}
 
 	private GameState currentGameState;
-	private bool hasChangeState;
-	private GameState nextGameState;
 
 	void Start ()
 	{
 		DontDestroyOnLoad(this);
 		CurrentGameState = GameState.Title;
 	}
-	
-	void Update ()
+
+	public void SceneChange(GameState _currentGameState)
 	{
-		if (hasChangeState)
+		currentGameState = _currentGameState;
+		switch (currentGameState)
 		{
-			currentGameState = nextGameState;
-			SceneManager.LoadScene(currentGameState.ToString());
-			hasChangeState = false;
+			case GameState.GameScene:
+				SceneManager.LoadScene("GameScene");
+				break;
 		}
 	}
 
